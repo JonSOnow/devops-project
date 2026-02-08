@@ -11,13 +11,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t devops-nginx .'
+                bat 'docker build -t devops-nginx .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 8084:80 devops-nginx'
+                bat 'docker run -d -p 8084:80 devops-nginx'
             }
         }
     }
